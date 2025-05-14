@@ -178,16 +178,16 @@ jobs:
          
       - name: Make AnyKernel3
         run: |
-         git clone https://github.com/RunRunxka/AnyKernel3.1.git --depth=1      
-         rm -rf ./AnyKernel3.1/.git
-         rm -rf ./AnyKernel3.1/push.sh
-         cp kernel_workspace/kernel_platform/dist/Image ./AnyKernel3.1/
+         git clone https://github.com/RunRunxka/AnyKernel3.git --depth=1      
+         rm -rf ./AnyKernel3/.git
+         rm -rf ./AnyKernel3/push.sh
+         cp kernel_workspace/kernel_platform/dist/Image ./AnyKernel3/
 
       - name: Upload AnyKernel3
         uses: actions/upload-artifact@v4
         with:
          name: SuKiSu_${{ env.KSUVER }}_${{ github.event.inputs.FEIL }}
-         path: ./AnyKernel3.1/*
+         path: ./AnyKernel3/*
          
       - name: Upload Image
         uses: actions/upload-artifact@v4
